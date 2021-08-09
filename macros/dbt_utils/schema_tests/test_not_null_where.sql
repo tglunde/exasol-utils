@@ -1,0 +1,9 @@
+{% macro exasol__test_not_null(model,) %}
+
+{% set column_name = kwargs.get('column_name', kwargs.get('arg')) %}
+
+select count(*) as validation_errors
+from {{ model }}
+where {{ column_name }} is null
+
+{% endmacro %}
