@@ -1,4 +1,4 @@
-{% macro exasol__test_not_null(model,) %}
+{% macro exasol__test_not_null(model) %}
 
 {% set column_name = kwargs.get('column_name', kwargs.get('arg')) %}
 
