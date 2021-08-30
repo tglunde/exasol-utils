@@ -5,8 +5,8 @@ Currently supported
 - dbt-audit-helper - partially
 
 Using the following dispatch rule in dbt_project.yml helped:
-'''
+```YAML
 dispatch:
   - macro_namespace: dbt_utils
     search_order: ['exasol_utils', 'dbt_utils']
-'''
+```
