@@ -2,10 +2,10 @@
 {% macro exasol__test_equality(model, compare_model, compare_columns=None) %}
 
 {% set set_diff %}
-    count(*) + coalesce(abs(
+    cast( count(*) + coalesce(abs(
         sum(case when which_diff = 'a_minus_b' then 1 else 0 end) -
         sum(case when which_diff = 'b_minus_a' then 1 else 0 end)
-    ), 0)
+    ), 0) as BIGINT)
 {% endset %}
 
 {#-- Needs to be set at parse time, before we return '' below --#}
