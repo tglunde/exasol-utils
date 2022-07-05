@@ -9,7 +9,6 @@
 {% endset %}
 
 {#-- Needs to be set at parse time, before we return '' below --#}
-{{ config(fail_calc = set_diff) }}
 
 {#-- Prevent querying of db in parsing mode. This works because this macro does not create any new refs. #}
 {%- if not execute -%}
